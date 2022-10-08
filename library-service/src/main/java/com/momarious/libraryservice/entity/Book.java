@@ -2,7 +2,7 @@ package com.momarious.libraryservice.entity;
 
 import java.util.List;
 
-public abstract class Book {
+public class Book {
 
     private String ISBN;
     private String title;
@@ -11,4 +11,6 @@ public abstract class Book {
     private String language;
     private int numberOfPages;
     private List<Author> authors;
+    private List<BookItem> items;
+
 }

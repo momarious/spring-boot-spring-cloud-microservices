@@ -5,7 +5,7 @@ import java.util.Date;
 import com.momarious.libraryservice.entity.enums.BookFormat;
 import com.momarious.libraryservice.entity.enums.BookStatus;
 
-public class BookItem extends Book {
+public class BookItem {
 
     private String barcode;
     private boolean isReferenceOnly;

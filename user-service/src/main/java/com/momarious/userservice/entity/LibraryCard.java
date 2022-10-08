@@ -2,6 +2,9 @@ package com.momarious.userservice.entity;
 
 import java.util.Date;
 
+import lombok.Data;
+
+@Data
 public class LibraryCard {
 
     private String cardNumber;

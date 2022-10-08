@@ -3,19 +3,25 @@ package com.momarious.libraryservice.service;
 import org.springframework.stereotype.Service;
 
 import com.momarious.libraryservice.entity.Book;
+import com.momarious.libraryservice.repository.BookRepository;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class BookService {
 
-    private Book addBook(Book book) {
+    private final BookRepository bookRepository;
+
+    public Book addBook(Book book) {
         return null;
     }
 
-    private Book removeBook(Book book) {
+    public Object editBook(String id, Book book) {
         return null;
     }
 
-    private Book editBook(Book book) {
+    public Object removeBook(String id) {
         return null;
     }
 

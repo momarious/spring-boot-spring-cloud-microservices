@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.momarious.userservice.dto.LoginDto;
 import com.momarious.userservice.entity.User;
+import com.momarious.userservice.entity.enums.AccountStatus;
+import com.momarious.userservice.entity.enums.Role;
 import com.momarious.userservice.exceptions.ResourceNotFoundException;
 import com.momarious.userservice.repository.UserRepository;
 
@@ -18,6 +20,8 @@ public class UserService {
     private final UserRepository userRepository;
 
     public User addUser(User u) {
+        u.setStatus(AccountStatus.CLOSED);
+        u.setRole(Role.MEMBER);
         return userRepository.save(u);
     }
 
@@ -43,8 +47,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Object login(LoginDto dto) {
-        return null;
+    public String login(LoginDto dto) {
+        return dto.getEmail() + " " + dto.getPassword();
     }
 
 }
