@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.momarious.userservice.dto.LoginDto;
-import com.momarious.userservice.entity.User;
+import com.momarious.userservice.dto.UserDto;
+import com.momarious.userservice.model.User;
 import com.momarious.userservice.service.UserService;
 
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -24,9 +24,9 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("register")
-    private ResponseEntity<?> createUser(@Valid @RequestBody User user) {
+    public ResponseEntity<?> register(@RequestBody UserDto dto) {
         try {
-            return ResponseEntity.ok(userService.addUser(user));
+            return ResponseEntity.ok(userService.addUser(dto));
         } catch (Exception e) {
             return ResponseEntity
                     .status(HttpStatus.FORBIDDEN)
@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("login")
-    private ResponseEntity<?> login(@RequestBody LoginDto dto) {
+    public ResponseEntity<?> login(@RequestBody LoginDto dto) {
         try {
             return ResponseEntity.ok(userService.login(dto));
         } catch (Exception e) {
@@ -57,7 +57,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<?> readUserById(@PathVariable String id) {
+    public ResponseEntity<?> readUserById(@PathVariable String id) {
         try {
             return ResponseEntity.ok(userService.getUser(id));
         } catch (Exception e) {
@@ -68,7 +68,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<?> updateUser(@PathVariable String id, @RequestBody User user) {
+    public ResponseEntity<?> updateUser(@PathVariable String id, @RequestBody User user) {
         try {
             return ResponseEntity.ok(userService.updateUser(id, user));
         } catch (Exception e) {
@@ -79,7 +79,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    private ResponseEntity<?> deleteUser(@PathVariable String id) {
+    public ResponseEntity<?> deleteUser(@PathVariable String id) {
         try {
             return ResponseEntity.ok(userService.removeUser(id));
         } catch (Exception e) {

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.momarious.libraryservice.entity.Book;
+import com.momarious.libraryservice.model.Book;
 import com.momarious.libraryservice.service.BookService;
 
 import lombok.AllArgsConstructor;

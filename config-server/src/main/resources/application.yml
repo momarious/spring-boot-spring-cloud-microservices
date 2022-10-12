@@ -1,14 +1,15 @@
+server:
+  port: 8888
+
 spring:
   application:
     name: config-server
+  profiles:
+    active: development
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/momarious/spring-boot-spring-cloud-microservices.git
-          username: ${git.username}
-          password: ${git.password}
-          clone-on-start: true
-          search-paths: config-server/src/main/resources/applications/
-server:
-  port: 8010
+          uri: https://github.com/momarious/spring-server-config.git
+    compatibility-verifier:
+      enabled: false

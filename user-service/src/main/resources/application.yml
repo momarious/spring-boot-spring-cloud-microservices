@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: user-service
-
-server:
-  port: ${PORT:1995}
-  servlet:
-    context-path: /api/v1/user

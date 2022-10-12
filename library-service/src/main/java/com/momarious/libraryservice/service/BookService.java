@@ -2,7 +2,7 @@ package com.momarious.libraryservice.service;
 
 import org.springframework.stereotype.Service;
 
-import com.momarious.libraryservice.entity.Book;
+import com.momarious.libraryservice.model.Book;
 import com.momarious.libraryservice.repository.BookRepository;
 
 import lombok.AllArgsConstructor;
