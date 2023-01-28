@@ -1,12 +1,50 @@
-version: "3"
-
+version: '3'
 services:
-  mongo:
+
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8880:8880"
+    environment:
+      - SPRING_APPLICATION_NAME=user-service
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/userDB
+      - SERVER_SERVLET_CONTEXT_PATH=/api/v1/user
+    networks:
+      - microservices
+    depends_on:
+      - mongodb
+
+  # library-service:
+  #   build:
+  #     context: ./library-service
+  #   ports:
+  #     - "8881:8881"
+  #   environment:
+  #     - SPRING_APPLICATION_NAME=library-service
+  #     - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/libraryDB
+  #     - SERVER_SERVLET_CONTEXT_PATH=/api/v1/library
+  #   networks:
+  #     - microservices
+
+  # reservation-service:
+  #   build:
+  #     context: ./reservation-service
+  #   ports:
+  #     - "8882:8882"
+  #   environment:
+  #     - SPRING_APPLICATION_NAME=reservation-service
+  #     - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/reservationDB
+  #     - SERVER_SERVLET_CONTEXT_PATH=/api/v1/reservation
+  #   networks:
+  #     - microservices
+
+  mongodb:
     image: mongo:latest
     ports:
-      - 27017:27017
-    volumes:
-      - mongo-data:/data/db
-  
-volumes:
-  mongo-data:
+      - "27017:27017"
+    networks:
+      - microservices
+
+networks:
+  microservices:

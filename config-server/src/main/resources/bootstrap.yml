@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: development
+  cloud:
+    config:
+      server:
+        # git:
+        #   uri: https://github.com/momarious/spring-server-config.git
+        native:
+          search-locations:
+            classpath: /config
+        
+    compatibility-verifier:
+      enabled: false
