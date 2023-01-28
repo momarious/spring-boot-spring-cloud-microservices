@@ -1,6 +1,14 @@
 version: '3'
 services:
 
+  config-server:
+    build:
+      context: ./config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - microservices
+
   user-service:
     build:
       context: ./user-service

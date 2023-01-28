@@ -1,0 +1,11 @@
+server:
+  port: ${PORT:8880}
+  servlet:
+    context-path: /api/v1/user
+    
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/userDB

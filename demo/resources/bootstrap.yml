@@ -5,7 +5,7 @@ spring:
   application:
     name: config-server
   profiles:
-    active: development
+    active: native, development, production
   cloud:
     config:
       server:
@@ -13,7 +13,6 @@ spring:
         #   uri: https://github.com/momarious/spring-server-config.git
         native:
           search-locations:
-            classpath: /config
-        
-    compatibility-verifier:
-      enabled: false
+            classpath: /config  
+    # compatibility-verifier:
+    #   enabled: false
