@@ -2,9 +2,36 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch DemoApplication",
+            "name": "Launch DiscoveryServerApplication",
             "request": "launch",
-            "mainClass": "com.momarious.demo.DemoApplication"
+            "mainClass": "com.momarious.discoveryserver.DiscoveryServerApplication"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiscoveryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.discoveryservice.DiscoveryServiceApplication"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiscoveryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.discoveryservice.DiscoveryServiceApplication",
+            "projectName": "discovery-service"
+        },
+        {
+            "type": "java",
+            "name": "Launch ApiGatewayApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.apigateway.ApiGatewayApplication",
+            "projectName": "api-gateway"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReservationServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.reservationservice.ReservationServiceApplication",
+            "projectName": "reservation-service"
         },
         {
             "type": "java",

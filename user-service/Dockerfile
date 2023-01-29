@@ -17,6 +17,6 @@ WORKDIR /project
 
 COPY --from=build /home/app/target/user-service-0.0.1-SNAPSHOT.jar /project/user-service.jar
 
-EXPOSE 8888
+EXPOSE 8880
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-Dblabla", "-jar","/project/user-service.jar"]
