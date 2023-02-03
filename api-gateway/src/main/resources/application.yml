@@ -1,0 +1,35 @@
+server:
+  port: 9191
+  
+spring:
+  application:
+    name: api-gateway
+  cloud: 
+    gateway: 
+      routes: 
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates: Path=/api/v1/user/**
+        
+        - id: RESERVATION-SERVICE
+          uri: lb://RESERVATION-SERVICE
+          predicates: Path=/api/v1/reservation/**
+          
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+        
+# spring.cloud.gateway.routes[1].id=reservation-service
+# spring.cloud.gateway.routes[1].uri=lb://reservation-service
+# spring.cloud.gateway.routes[1].predicates[0]=Path=/api/v1/reservation/**
+

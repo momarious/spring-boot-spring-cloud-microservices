@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8881}
+  servlet:
+    context-path: /api/v1/reservation
+    
+spring:
+  application:
+    name: reservation-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+logging:
+  level:
+    org.springframework.web:  info
+    web: debug
+
+message: This is a message from the config server to the reservation-service

@@ -1,5 +1,3 @@
-server:
-  port: ${PORT:8080}
 spring:
   application:
     name: user-service
@@ -7,8 +5,6 @@ spring:
     active: development
   cloud:
     config:
-      uri: http://localhost:8888
-      retry:
-        max-attempts: 8
-        max-interval: 2000
-        initial-interval: 10000
+      enabled: false
+      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
+  

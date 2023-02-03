@@ -1,0 +1,68 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch DiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.discoveryserver.DiscoveryServerApplication"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiscoveryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.discoveryservice.DiscoveryServiceApplication"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiscoveryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.discoveryservice.DiscoveryServiceApplication",
+            "projectName": "discovery-service"
+        },
+        {
+            "type": "java",
+            "name": "Launch ApiGatewayApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.apigateway.ApiGatewayApplication",
+            "projectName": "api-gateway"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReservationServiceApplication",
+            "request": "launch",
+            "mainClass": "com.momarious.reservationservice.ReservationServiceApplication",
+            "projectName": "reservation-service"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConfigServerApplication<config-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.momarious.configserver.ConfigServerApplication",
+            "projectName": "config-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=38939 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=config-server"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserServiceApplication<user-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.momarious.userservice.UserServiceApplication",
+            "projectName": "user-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryServerApplication<discovery-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.momarious.discoveryserver.DiscoveryServerApplication",
+            "projectName": "discovery-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
