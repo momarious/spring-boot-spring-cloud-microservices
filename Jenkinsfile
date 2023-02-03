@@ -4,10 +4,14 @@ def docker_registry_url = ""
 def repository_url = "momarious/spring-boot-spring-cloud-microservices"
 
 pipeline {
-    agent { 
-        docker { 
-            image 'maven:3.6.3-jdk-8' 
-        } 
+    agent any 
+    // { 
+    //     docker { 
+    //         image 'maven:3.8.1-openjdk-17-slim' 
+    //     } 
+    // }
+    tools {  
+        maven 'mvn'
     }
     stages {
         stage('Clone Git Repository') {
