@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'mvn clean install'
+                // sh 'mvn clean install'
                 sh 'docker build -t ' + image_name + ' .'
             }
         }
@@ -33,10 +33,10 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Deploy to Docker Compose') {
-            steps {
-                sh 'docker-compose -f docker-compose.yml up -d'
-            }
-        }
+        // stage('Deploy to Docker Compose') {
+        //     steps {
+        //         sh 'docker-compose -f docker-compose.yml up -d'
+        //     }
+        // }
     }
 }
