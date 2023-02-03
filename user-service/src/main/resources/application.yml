@@ -1,11 +1,11 @@
 server:
-  port: 8881
+  port: ${PORT:8880}
   servlet:
-    context-path: /api/v1/reservation
+    context-path: /api/v1/user
     
 spring:
   application:
-    name: reservation-service
+    name: user-service
 
 eureka:
   client:
@@ -16,11 +16,12 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include:
+        - "*"
         
 logging:
   level:
     org.springframework.web:  info
     web: debug
 
-message: This is a message from the config server to the reservation-service
+message: This is a message from the config server to the user-service

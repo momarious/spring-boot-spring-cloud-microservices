@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8880}
+  port: 8880
   servlet:
     context-path: /api/v1/user
     
@@ -9,7 +9,20 @@ spring:
 
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    
+        
+logging:
+  level:
+    org.springframework.web:  info
+    web: debug
 
 message: This is a message from the config server to the user-service

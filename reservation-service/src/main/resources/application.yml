@@ -1,5 +1,5 @@
 server:
-  port: 8881
+  port: ${PORT:8881}
   servlet:
     context-path: /api/v1/reservation
     
@@ -16,7 +16,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include:
+        - "*"
         
 logging:
   level:
