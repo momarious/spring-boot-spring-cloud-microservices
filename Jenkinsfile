@@ -11,7 +11,7 @@ pipeline {
     //     } 
     // }
     tools {  
-        maven 'mvn'
+        maven 'mvn 3.8.1'
     }
     stages {
         stage('Clone Git Repository') {
