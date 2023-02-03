@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3-jdk-8-alpine AS build
+FROM maven:3.8.1-openjdk-17-slim AS build
 
 # WORKDIR /home/app
 
@@ -9,10 +9,10 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 # Run stage
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17-jdk-slim
 
 # If As you are using alpine base image not ubuntu. So, the package manager for alpine is apk not apt or apt-get
-RUN apk update && apk add maven
+RUN apt-get update && apt-get install -y maven
 
 WORKDIR /project
 

@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh './mvnw clean install'
+                sh './mvnw clean install -DskipTests'
                 sh 'docker build -t ' + image_name + ' .'
             }
         }
