@@ -19,12 +19,12 @@ pipeline {
                 git url: 'https://github.com/' + repository_url  + '.git'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                // sh 'mvn clean install'
-                sh 'docker build -t ' + image_name + ' .'
-            }
-        }
+        // stage('Build Docker Image') {
+        //     steps {
+        //         // sh 'mvn clean install'
+        //         sh 'docker build -t ' + image_name + ' .'
+        //     }
+        // }
         // stage('Push Docker Image') {
         //     steps {
         //         withDockerRegistry(credentialsId: docker_registry_credentials_id, 
@@ -33,10 +33,10 @@ pipeline {
         //         }
         //     }
         // }
-        // stage('Deploy to Docker Compose') {
-        //     steps {
-        //         sh 'docker-compose -f docker-compose.yml up -d'
-        //     }
-        // }
+        stage('Deploy to Docker Compose') {
+            steps {
+                sh 'docker-compose -f docker-compose.yml up -d'
+            }
+        }
     }
 }
