@@ -1,13 +1,6 @@
 version: '3'
 services:
 
-  config-server:
-    build:
-      context: ./config-server
-    ports:
-      - "8888:8888"
-    networks:
-      - microservices
 
   discovery-server:
     build:
@@ -16,8 +9,16 @@ services:
       - "8761:8761"
     networks:
       - microservices
+
+  config-server:
+    build:
+      context: ./config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - microservices
     depends_on:
-      - config-server
+      - discovery-server
 
   user-service:
     build:
